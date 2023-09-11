@@ -41,26 +41,15 @@ RSpec.describe "Items Index", type: :feature do
 
         visit "/items"
 
-        within("item_#{banana.id}") do
-          expect(page).to have_content("#{banana.name}")
-          expect(page).to have_content("Price: $#{banana.price}")
-          expect(page).to have_content("Supermarket: #{banana.supermarket.name}")
-          expect(page).to have_content("Count of customers that have bought this item: 1")
-        end
 
-        within("item_#{apple.id}") do
-          expect(page).to have_content("#{apple.name}")
-          expect(page).to have_content("Price: $#{apple.price}")
-          expect(page).to have_content("Supermarket: #{apple.supermarket.name}")
-          expect(page).to have_content("Count of customers that have bought this item: 2")
-        end
+        expect(page).to have_content("#{banana.name}")
+        expect(page).to have_content("Price: $#{banana.price} | Supermarket: #{banana.supermarket.name} | Count of customers that have bought this item: 1")
 
-        within("item_#{orange.id}") do
-          expect(page).to have_content("#{orange.name}")
-          expect(page).to have_content("Price: $#{orange.price}")
-          expect(page).to have_content("Supermarket: #{orange.supermarket.name}")
-          expect(page).to have_content("Count of customers that have bought this item: 1")
-        end
+        expect(page).to have_content("#{apple.name}")
+        expect(page).to have_content("Price: $#{apple.price} | Supermarket: #{apple.supermarket.name} | Count of customers that have bought this item: 2")
+
+        expect(page).to have_content("#{orange.name}")
+        expect(page).to have_content("Price: $#{orange.price} | Supermarket: #{orange.supermarket.name} | Count of customers that have bought this item: 1")
       end
     end
   end
