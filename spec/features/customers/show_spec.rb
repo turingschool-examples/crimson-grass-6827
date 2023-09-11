@@ -29,8 +29,8 @@ RSpec.describe "Customer Show",type: :feature do
         expect(page).to have_content("Sally Shopper")
         
         expect(page).to have_content("Items:")
-        expect(page).to have_content("Name: #{banana.name} | Price: #{banana.price} | Supermarket: #{supermarket_1.name}")
-        expect(page).to have_content("Name: #{apple.name} | Price: #{apple.price} | Supermarket: #{supermarket_1.name}")
+        expect(page).to have_content("Name: #{banana.name} | Price: $#{banana.price} | Supermarket: #{supermarket_1.name}")
+        expect(page).to have_content("Name: #{apple.name} | Price: $#{apple.price} | Supermarket: #{supermarket_1.name}")
       end
     end
   end
@@ -71,7 +71,7 @@ RSpec.describe "Customer Show",type: :feature do
             expect(current_path).to eq("/customers/#{customer_1.id}")
 
             within("#items") do
-              expect(page).to have_content("Name: #{apple.name} | Price: #{apple.price} | Supermarket: #{supermarket_1.name}")
+              expect(page).to have_content("Name: #{apple.name} | Price: $#{apple.price} | Supermarket: #{supermarket_1.name}")
             end
           end
         end
