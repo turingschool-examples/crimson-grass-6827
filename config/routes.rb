@@ -12,4 +12,7 @@ Rails.application.routes.draw do
 
   # User Story 3
   get "/items", to: "items#index"
+
+  # Extension
+  get "/supermarkets/:id", to: "supermarkets#show"
 end

@@ -14,14 +14,13 @@ RSpec.describe "Supermarkets Show" do
 
       CustomerItems.create!(customer: @customer_1, item: @item_1)
       CustomerItems.create!(customer: @customer_1, item: @item_2)
-      CustomerItems.create!(customer: @customer_2, item: @item_2)
-      CustomerItems.create!(customer: @customer_2, item: @item_3)
     end
 
-    xit "displays a unique list of all customers" do
-      visit "/supermarket/#{@supermarket_1}"
+    it "displays a unique list of all customers" do
+      visit "/supermarkets/#{@supermarket_1.id}"
 
-      expect(page).to have_content()
+      expect(page).to have_content(@customer_1.name)
+      expect(page).to_not have_content(@customer_2.name)
     end
   end
 end
