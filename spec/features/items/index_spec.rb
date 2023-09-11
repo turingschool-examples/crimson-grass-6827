@@ -29,15 +29,15 @@ RSpec.describe "the item index page" do
       expect(page).to have_content("Item Name: #{item_1.name}")
       expect(page).to have_content("Item Price: #{item_1.price}")
       expect(page).to have_content("Item Location: #{item_1.supermarket.name}")
-      expect(page).to have_content("Number of Customers who purchased #{item_1.name}: 2")
+      expect(page).to have_content("Number of Customers who Purchased #{item_1.name}: 2")
       expect(page).to have_content("Item Name: #{item_2.name}")
       expect(page).to have_content("Item Price: #{item_2.price}")
       expect(page).to have_content("Item Location: #{item_2.supermarket.name}")
-      expect(page).to have_content("Number of Customers who purchased #{item_2.name}: 2")
+      expect(page).to have_content("Number of Customers who Purchased #{item_2.name}: 2")
       expect(page).to have_content("Item Name: #{item_3.name}")
       expect(page).to have_content("Item Price: #{item_3.price}")
       expect(page).to have_content("Item Location: #{item_3.supermarket.name}")
-      expect(page).to have_content("Number of Customers who purchased #{item_3.name}: 3")
+      expect(page).to have_content("Number of Customers who Purchased #{item_3.name}: 3")
     end
   end
 end

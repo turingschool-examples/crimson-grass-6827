@@ -68,12 +68,26 @@ RSpec.describe "the customer show page" do
       fill_in "new_item_id", with: "#{item_4.id}"
       click_button "Save"
       expect(page).to have_current_path("/customers/#{customer_1.id}")
+
+      fill_in "new_item_id", with: "#{item_5.id}"
+      click_button "Save"
+      expect(page).to have_current_path("/customers/#{customer_1.id}")
+
+      fill_in "new_item_id", with: "#{item_6.id}"
+      click_button "Save"
+      expect(page).to have_current_path("/customers/#{customer_1.id}")
     end
-    
+
     within(".items") do
       expect(page).to have_content("Item Name: #{item_4.name}")
       expect(page).to have_content("Item Price: #{item_4.price}")
       expect(page).to have_content("Item Location: #{item_4.supermarket.name}")
+      expect(page).to have_content("Item Name: #{item_5.name}")
+      expect(page).to have_content("Item Price: #{item_5.price}")
+      expect(page).to have_content("Item Location: #{item_5.supermarket.name}")
+      expect(page).to have_content("Item Name: #{item_6.name}")
+      expect(page).to have_content("Item Price: #{item_6.price}")
+      expect(page).to have_content("Item Location: #{item_6.supermarket.name}")
     end
   end
 end
