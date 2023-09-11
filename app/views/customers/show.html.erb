@@ -6,3 +6,11 @@
     <p>Store: <%= item.supermarket.name %></p></br>
   <% end %>
 </div>
+<div class="add-item-form">
+  <h4>Missing something? Look it up!</h4>
+  <%= form_with url: "/customers/#{@customer.id}", method: :post do |form| %>
+    <%= form.label :name, "Search for an Item:" %>
+    <%= form.text_field :item_id %>
+    <%= form.submit "Add" %>
+  <% end %>
+</div>
