@@ -21,5 +21,10 @@ RSpec.describe "the customers show" do
     expect(page).to have_content(item_1.name)
     expect(page).to have_content(item_1.price)
     expect(page).to have_content(item_1.supermarket_id)
+    expect(page).to have_content(item_2.name)
+    expect(page).to have_content(item_2.price)
+    expect(page).to have_content(item_2.supermarket_id)
+    
+    save_and_open_page
   end
 end
