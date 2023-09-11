@@ -3,6 +3,6 @@
 <p>
   Customers that have shopped here: 
   <% @supermarket.all_customers.each do |customer| %>
-    <%= customer.name %>, 
+    <%= customer == @supermarket.all_customers.last ? "#{customer}" : "#{customer}, " %> 
   <% end %>
 </p>

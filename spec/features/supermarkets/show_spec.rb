@@ -21,6 +21,7 @@ RSpec.describe "Supermarkets Show", type: :feature do
       expect(page).to have_content(@customer_1.name)
       expect(page).to have_content(@customer_2.name)
       expect(page).to_not have_content(@customer_3.name)
+      save_and_open_page
     end
   end
 end
