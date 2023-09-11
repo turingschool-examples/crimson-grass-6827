@@ -1,0 +1,8 @@
+<h1>Supermarket Name: <%= @supermarkets.name %></h1>
+<h2>Location: <%= @supermarkets.location %></h2>
+
+<h3>Customer List:</h3>
+<% @supermarkets.items do |item| %>
+   <li><%= item.customer_count %></li>
+<% end %>
+
