@@ -2,6 +2,6 @@
 
 <h2>Items:</h2>
 
-<% @items.each do |item| %>
+<% @customer.items.each do |item| %>
   <p>Name: <%= item.name %> | Price: <%= item.price %> | Supermarket: <%= item.supermarket.name %></p>
 <% end %>
