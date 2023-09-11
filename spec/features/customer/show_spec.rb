@@ -17,12 +17,23 @@ RSpec.describe "customer show page", type: :feature do
 
   it "can show customers name, list of their items, the price of those items, and the supermarket those items came from" do
     visit "/customers/#{@customer_1.id}"
+
     expect(page).to have_content("Rainbow Grocery")
-    expect(page).to have_content("Tofu")
-    expect(page).to have_content(4)
     expect(page).to have_content("Chocolate")
     expect(page).to have_content(2)
     expect(page).to have_content("James")
-    save_and_open_page
+  end
+
+  it "allows a visitor to add an item to a customer" do
+    visit "/customers/#{@customer_1.id}"
+
+    expect(page).to have_content("Rainbow Grocery")
+
+    fill_in "Item ID Number:", with: @item_2.id
+    click_button "Add Item"
+
+    expect(page).to have_content("Rainbow Grocery")
+    expect(page).to have_content("Tofu")
+    expect(page).to have_content(4)
   end
 end
