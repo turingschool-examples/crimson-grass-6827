@@ -24,5 +24,6 @@ RSpec.describe Supermarket, type: :model do
     customer_3.add_item(item_3.id)
 
     expect(supermarket_1.unique_customer_names).to include(customer_1.name,customer_2.name,customer_3.name)
+    expect(supermarket_1.unique_customer_names).not_to include(customer_4.name)
   end
 end

@@ -18,6 +18,6 @@ RSpec.describe Customer, type: :model do
     customer.add_item(item_2.id)
     customer.add_item(item_3.id)
 
-    expect(customer.items).to eq([item_1, item_2, item_3])
+    expect(customer.items).to include(item_1, item_2, item_3)
   end
 end

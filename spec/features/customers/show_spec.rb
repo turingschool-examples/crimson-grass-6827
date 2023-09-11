@@ -33,10 +33,6 @@ RSpec.describe "the customer show" do
     item_2 = Item.create(name: "Carrots", price: 2, supermarket_id: supermarket_1.id)
     item_3 = Item.create(name: "Chicken", price: 5, supermarket_id: supermarket_1.id)
 
-    # customer.add_item(item_1.id)
-    # customer.add_item(item_2.id)
-    # customer.add_item(item_3.id)
-
     visit ("/customers/#{customer.id}") 
     fill_in "id", with: "#{item_1.id}"
     click_button "Add Item"
