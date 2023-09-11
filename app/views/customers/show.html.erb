@@ -1,0 +1,15 @@
+<h1><%= @customer.name %>'s Ingredients</h1>
+<br>
+<% @customer.items.each do |item| %>
+  <h3><%= item.name %></h3><br>
+  <p>Price: $<%= item.price %></p><br>
+  <p>Super Market: <%= item.supermarket_name %></p>
+<% end %>
+<br>
+<br>
+
+<%= form_with url: "/customers/#{@customer.id}/customer_items", method: :post, local: true do |form| %>
+  <%= form.label :item_id %>
+  <%= form.text_field :item_id %>
+  <%= form.submit "Add Item" %>
+<% end %>
