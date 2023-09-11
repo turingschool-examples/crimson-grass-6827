@@ -8,6 +8,8 @@
 
 customer_1 = Customer.create!(name: "Sally Shopper")
 
+customer_2 = Customer.create!(name: "Bobby Buyer")
+
 supermarket_1 = Supermarket.create!(
   name: "Corner Market",
   location: "123 Food Street"
@@ -30,3 +32,5 @@ orange = supermarket_1.items.create!(
 
 CustomerItem.create!(customer: customer_1, item: banana)
 CustomerItem.create!(customer: customer_1, item: apple)
+
+CustomerItem.create!(customer: customer_2, item: banana)
