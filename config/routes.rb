@@ -6,4 +6,7 @@ Rails.application.routes.draw do
 
   # User Story 1
   get "/customers/:id", to: "customers#show"
+
+  # User Story 2
+  post "/customers/:customer_id/items", to: "customer_items#create"
 end

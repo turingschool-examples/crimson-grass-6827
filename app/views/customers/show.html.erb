@@ -2,9 +2,14 @@
 
 <ul class="items-list">
   <% @customer.items.each do |item| %>
-    <%= item.name%>
-    <%= item.price%>
-    <%= item.supermarket.name%>
+    <p> Item Name: <%= item.name%> </p>
+    <p> Item Price: <%= item.price%> </p>
+    <p> Item Store: <%= item.supermarket.name%> </p>
   <% end%>
 </ul>
 
+<%= form_with url: "/customers/#{@customer.id}/items" do |f| %>
+  <%= f.label "Item_id" %>
+  <%= f.text_field :item_id %>
+  <%= f.submit "Submit" %>
+<% end %>
