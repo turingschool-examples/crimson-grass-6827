@@ -34,13 +34,24 @@ RSpec.describe "items#index" do
       expect(page).to have_content(@item_1.name)
       expect(page).to have_content(@item_1.price)
       expect(page).to have_content(@item_1.supermarket.name)
+      expect(page).to have_content(@item_1.customer_count)
 
       expect(page).to have_content("Name: #{@item_2.name}")
       expect(page).to have_content("Price: #{@item_2.price}")
       expect(page).to have_content("Supermarket: #{@item_2.supermarket.name}")
-      
-     
+      expect(page).to have_content("Customers Count: #{@item_2.customer_count}")
 
+      # hard coding customers count to check that both instances of item_3 
+      # aka milk show up 2 times
+      expect(page).to have_content("Name: #{@item_3.name}")
+      expect(page).to have_content("Price: #{@item_3.price}")
+      expect(page).to have_content("Supermarket: #{@item_3.supermarket.name}")
+      expect(page).to have_content("Customers Count: 2")
+      
+      expect(page).to have_content(@item_4.name)
+      expect(page).to have_content("Price: #{@item_4.price}")
+      expect(page).to have_content(@item_4.supermarket.name)
+      expect(page).to have_content("Customers Count: 0")
     end
 
 end
