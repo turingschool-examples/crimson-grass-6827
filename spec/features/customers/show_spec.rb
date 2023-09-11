@@ -37,7 +37,6 @@ RSpec.describe "recipes show page", type: :feature do
   describe "When I visit a customer show page" do
     it "shows the customer's name with a list of their items's name and price" do
       visit "/customers/#{@sally.id}"
-      
       expect(page).to have_content(@sally.name)
       expect(page).to have_content(@cheese.name)
       expect(page).to have_content(@cheese.price)
