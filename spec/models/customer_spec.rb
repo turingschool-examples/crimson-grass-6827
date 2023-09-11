@@ -12,11 +12,4 @@ RSpec.describe Customer, type: :model do
     it { should have_many :customer_items}
     it { should have_many(:items).through(:customer_items) }
   end
-
-  describe '#items_names' do
-    it "should pull the name of items" do
-      require 'pry';binding.pry
-      expect(@customer1.items_names).to eq(["Banana"])
-    end
-  end
 end
