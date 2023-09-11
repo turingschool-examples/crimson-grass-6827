@@ -1,0 +1,9 @@
+<h1>Customer: <%= @customer.name %></h1>
+
+<section>
+  <ol>List of items:<br>
+    <% @customer.items.each do |item| %>
+      <li><%= item.name %>: $<%= item.price %>, found at: <%= item.supermarket.name %></li>
+    <% end %>
+  </ol>
+</section>
