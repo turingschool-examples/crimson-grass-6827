@@ -5,3 +5,8 @@
   <%= item.name %>, Price: $<%= item.price %>, Supermarket: <%= item.supermarket.name %><br>
 <% end %>
 </p>
+<%= form_with url: "/customers/#{@customer.id}", method: :patch, data: {turbo: false} do |form| %>
+  <%= form.label "Add an item to this customer:" %><br>
+  <%= form.number_field :item_id, min: 1, step: 1 %>
+  <%= form.submit "Submit" %>
+<% end %>
