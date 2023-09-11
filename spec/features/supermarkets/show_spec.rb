@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Supermarket, type: :model do
+RSpec.describe 'Supermarkets Show Page' do
   before :each do
     @market1 = Supermarket.create!(name: "Smith's", location: "2100 South")
     @market2 = Supermarket.create!(name: "Harmon's", location: "4700 South")
@@ -20,18 +20,13 @@ RSpec.describe Supermarket, type: :model do
     @customer_item_4 = CustomerItem.create!(item_id: @item4.id, customer_id: @customer2.id)
   end 
 
-  describe 'relationships' do
-    it { should have_many :items }
-  end
+  describe "#show" do
+    it "displays the supermarket's name and all the customers who have shopped there" do
+      visit "/supermarkets/#{@market1.id}"
 
-  describe 'validations' do
-    it { should validate_presence_of :name }
-    it { should validate_presence_of :location }
-  end
-
-  describe "instance methods" do
-    it "#market_customers" do
-      expect(@market1.market_customers).to eq(["Dani", "Juliet"])
+      expect(page).to have_content(@market1.name)
+      expect(page).to have_content(@customer1.name)
+      expect(page).to have_content(@customer2.name)
     end
   end
 end

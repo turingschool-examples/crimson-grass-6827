@@ -19,5 +19,6 @@
 
 @customer_item_1 = CustomerItem.create!(item_id: @item1.id, customer_id: @customer1.id)
 @customer_item_2 = CustomerItem.create!(item_id: @item2.id, customer_id: @customer1.id)
+@customer_item_2 = CustomerItem.create!(item_id: @item2.id, customer_id: @customer2.id)
 @customer_item_3 = CustomerItem.create!(item_id: @item3.id, customer_id: @customer2.id)
 @customer_item_4 = CustomerItem.create!(item_id: @item4.id, customer_id: @customer2.id)
