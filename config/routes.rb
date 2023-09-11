@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   get 'items/:id', to: "items#show"
   post '/customers/:id/add_item', to: "customer_items#create", as: "customer_add_item"
   get '/items', to: "items#index"
-  get 'supermarkets/:id', to: "supermarkets#show
+  get 'supermarkets/:id', to: "supermarkets#show"
 end
