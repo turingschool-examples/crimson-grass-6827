@@ -15,10 +15,17 @@ RSpec.describe "Items Index", type: :feature do
 
         visit "/items" 
         
-        expect(page).to have_content(@tomato.name)
-        expect(page).to have_content(@onion.name)
-        expect(page).to have_content(@kings.name)
+        within(".#{@tomato.name}") do
+          expect(page).to have_content(@tomato.name)
+          expect(page).to have_content(@tomato.price)
+          expect(page).to have_content(@tomato.supermarket.name)
+        end
 
+        within(".#{@onion.name}") do
+          expect(page).to have_content(@onion.name)
+          expect(page).to have_content(@onion.price)
+          expect(page).to have_content(@onion.supermarket.name)
+        end
       end
     end
   end
