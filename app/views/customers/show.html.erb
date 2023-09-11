@@ -6,7 +6,7 @@
   <% end %>
 </section>
 <h3>Add Item:</h3>
-<%= form_with url: "/customers/#{@customer.id}", method: :post, data: {turbo: false} |f| do %>
-  <%= f.text_field :new_item %>
+<%= form_with url: "/customers/#{@customer.id}", method: :post, data: {turbo: false} do |f| %>
+  <%= f.text_field :item %>
   <%= f.submit  "Submit" %>
 <% end %>

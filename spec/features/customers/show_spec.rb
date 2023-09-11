@@ -28,10 +28,12 @@ RSpec.describe "Customer show", type: :feature do
 
         visit "/customers/#{@customer_1.id}"
 
-        fill_in "new_item", with: "#{@onion.id}"
+        fill_in "item", with: "#{@onion.id}"
         click_on "Submit"
 
-        expect(page).to have_content(@onion.name)
+        within(".item_list") do
+          expect(page).to have_content(@onion.name)
+        end
       end
     end
   end
