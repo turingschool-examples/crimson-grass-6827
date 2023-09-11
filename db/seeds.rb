@@ -5,3 +5,22 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+@supermarket_1 = Supermarket.create(name: "Reasors", location: "Tulsa, OK")
+@supermarket_2 = Supermarket.create(name: "Whole Foods", location: "Tulsa, OK")
+@customer_1 = Customer.create(name: "Will")
+@customer_2 = Customer.create(name: "Dee")
+@customer_3 = Customer.create(name: "Test")
+@item_1 = @supermarket_1.items.create(name: "Banana", price: 1)
+@item_2 = @supermarket_1.items.create(name: "Apple", price: 1)
+@item_3 = @supermarket_2.items.create(name: "Cilantro", price: 1)
+@item_4 = @supermarket_2.items.create(name: "Eggs", price: 2)
+@item_5 = @supermarket_1.items.create(name: "Peppers", price: 2)
+@item_6 = @supermarket_1.items.create(name: "Avocado", price: 1)
+@customer_item_1 = CustomerItem.create(customer_id: @customer_1.id, item_id: @item_1.id)
+@customer_item_2 = CustomerItem.create(customer_id: @customer_1.id, item_id: @item_2.id)
+@customer_item_3 = CustomerItem.create(customer_id: @customer_2.id, item_id: @item_3.id)
+@customer_item_4 = CustomerItem.create(customer_id: @customer_2.id, item_id: @item_4.id)
+@customer_item_5 = CustomerItem.create(customer_id: @customer_3.id, item_id: @item_5.id)
+@customer_item_6 = CustomerItem.create(customer_id: @customer_3.id, item_id: @item_6.id)
+
