@@ -1,0 +1,21 @@
+<h1>All Items</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Price</th>
+      <th>Supermarket</th>
+      <th>Customers Purchased</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @items.each do |item| %>
+      <tr>
+        <td><%= item.name %></td>
+        <td><%= item.price %></td>
+        <td><%= item.supermarket.name %></td>
+        <td><%= item.customers.count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

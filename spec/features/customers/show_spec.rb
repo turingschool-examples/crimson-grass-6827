@@ -38,7 +38,6 @@ RSpec.feature "the customer show page" do
       expect(page).to have_content(steak.name)
       expect(page).to have_content(steak.price)
     end
-
   end
 end
 
