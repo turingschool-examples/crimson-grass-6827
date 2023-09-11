@@ -10,10 +10,4 @@ RSpec.describe Supermarket, type: :model do
   describe 'relationships' do
     it { should have_many :items }
   end
-
-  describe '#find_market_by_item' do
-    it 'finds what market an item belongs to' do
-      expect(Supermarket.find_market_by_item(@tomato)).to eq(@kings)
-    end
-  end
 end

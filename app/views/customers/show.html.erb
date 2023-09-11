@@ -3,5 +3,5 @@
   <h3>Items:</h3>
   <% @customer.items.each do |item| %>
     <li><%= item.name %>, Price: <%= item.price %>, 
-    Supermarket: <%= Supermarket.find_market_by_item(item).name %></li>
+    Supermarket: <%= item.supermarket.name %></li>
   <% end %>
