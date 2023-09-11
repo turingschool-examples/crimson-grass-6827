@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Customers Show" do
+RSpec.describe "Customers Show", type: :feature do
   before(:each) do
     @customer_1 = Customer.create!(name: "Tyler")
     @supermarket_1 = Supermarket.create!(name: "Get ya Fishes", location: "1234 Fish St")
@@ -47,8 +47,6 @@ RSpec.describe "Customers Show" do
       expect(page).to have_current_path("/customers/#{@customer_1.id}")
       expect(page).to have_content(@item_2.name)
       expect(page).to have_content(@item_2.price)
-
-      save_and_open_page
     end
   end
 end
