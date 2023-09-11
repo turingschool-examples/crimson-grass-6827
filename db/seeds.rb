@@ -23,5 +23,10 @@ apple = supermarket_1.items.create!(
   price: 2
 )
 
+orange = supermarket_1.items.create!(
+  name: "Orange",
+  price: 3
+)
+
 CustomerItem.create!(customer: customer_1, item: banana)
 CustomerItem.create!(customer: customer_1, item: apple)
