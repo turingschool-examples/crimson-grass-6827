@@ -2,6 +2,11 @@
 <section class="item_list">
   <h3>Items:</h3>
   <% @customer.items.each do |item| %>
-    <li><%= item.name %>, Price: <%= item.price %>, 
-    Supermarket: <%= item.supermarket.name %></li>
+    <li><%= item.name %>, Price: <%= item.price %>, Supermarket: <%= item.supermarket.name %></li>
   <% end %>
+</section>
+<h3>Add Item:</h3>
+<%= form_with url: "/customers/#{@customer.id}", method: :post, data: {turbo: false} |f| do %>
+  <%= f.text_field :new_item %>
+  <%= f.submit  "Submit" %>
+<% end %>
