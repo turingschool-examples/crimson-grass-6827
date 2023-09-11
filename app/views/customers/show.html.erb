@@ -1,0 +1,7 @@
+<h1>Customer: <%= @customer.name %></h1>
+<section class="item_list">
+  <h3>Items:</h3>
+  <% @customer.items.each do |item| %>
+    <li><%= item.name %>, Price: <%= item.price %>, 
+    Supermarket: <%= Supermarket.find_market_by_item(item).name %></li>
+  <% end %>
