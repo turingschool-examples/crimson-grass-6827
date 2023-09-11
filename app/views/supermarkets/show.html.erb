@@ -1,0 +1,19 @@
+<h1>Supermarket Name: <%= @supermarket.name %></h1>
+
+<section class="supermarket_info">
+<h3>Supermarket Location <%= @supermarket.location %></h3>
+</section>
+
+<section class="customers">
+<h3>Customer who have Shopped at this Location: </h3>
+<% @supermarket.items.each do |item| %>
+  <% item.customers.each do |customer| %>
+  <ul>
+  <li><%= customer.name %></li>
+  </ul>
+  <% end %>
+<% end %>
+
+</section>
+
+

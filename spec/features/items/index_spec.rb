@@ -18,7 +18,6 @@ RSpec.describe "the item index page" do
     customer_item_4 = CustomerItem.create(customer: customer_2, item: item_1)
     customer_item_5 = CustomerItem.create(customer: customer_2, item: item_2)
     customer_item_6 = CustomerItem.create(customer: customer_2, item: item_3)
-
     customer_item_7 = CustomerItem.create(customer: customer_3, item: item_3)
 
     visit "/items"
