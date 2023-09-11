@@ -66,7 +66,7 @@ RSpec.describe "Customer Show",type: :feature do
             
             fill_in "Add item by item ID:", with: "#{apple.id}"
 
-            click "Submit"
+            click_button "Submit"
 
             expect(current_path).to eq("/customers/#{customer_1.id}")
 
