@@ -33,7 +33,7 @@ RSpec.describe "Items index page" do
     it "Then I see a list of all items" do
       visit "/items"
 
-      save_and_open_page
+
     
       expect(page).to have_content(@item_1.name)
       expect(page).to have_content(@item_1.price)
