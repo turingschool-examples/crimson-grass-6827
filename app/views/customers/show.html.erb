@@ -4,8 +4,11 @@
 <% @customers.items.each do |item| %>
   <h3>Name: <%= item.name %></h2>
   <h3>Price: <%= item.price %></h3>
-  <%# <% binding.pry %> %>
-  #<h3>Supermarket: <%= item.supermarket.name %>
+  <h3>Supermarket: <%= item.supermarket.name %>
+<% end %>
 
-
+<%= form_with url: "/customers/#{@customers.id}/items" do |f| %>
+  <%= f.label "Item ID" %>
+  <%= f.text_field :item_id %>
+  <%= f.submit "Submit" %>
 <% end %>

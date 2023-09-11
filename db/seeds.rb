@@ -20,6 +20,7 @@ Supermarket.destroy_all
 @item_1 = @supermarket_1.items.create!(name: "Eggs", price: 6)
 @item_2 = @supermarket_1.items.create!(name: "Banana", price: 1)
 @item_3 = @supermarket_1.items.create!(name: "Milk", price: 4)
+@item_4 = @supermarket_1.items.create!(name: "Walnuts", price: 5)
 
 #customer item
 @eggs = CustomerItem.create!(customer: @customer_1, item: @item_1)
