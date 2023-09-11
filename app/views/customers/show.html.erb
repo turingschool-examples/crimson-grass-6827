@@ -1,12 +1,13 @@
 <h1>Customer: <%= @customer.name %></h1>
 
 <section>
-  <ol>List of items:<br>
+  <p>List of items:</p>
+  <ol>
     <% @customer.items.each do |item| %>
       <li><%= item.name %>: $<%= item.price %>, found at: <%= item.supermarket.name %></li>
     <% end %>
   </ol>
-  <%= form_with url: "/customers/:id/items", method: :post, data: { turbo: false } do |form| %> <!-- is this URL RESTful? -->
+  <%= form_with url: "/customers/#{@customer.id}/items", method: :post, data: { turbo: false } do |form| %> <!-- is this URL RESTful? -->
     <%= form.label :item_id, "Item ID" %><br>
     <%= form.text_field :item_id %>
     <%= form.submit "Add Item" %>

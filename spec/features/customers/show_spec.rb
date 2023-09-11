@@ -47,6 +47,8 @@ RSpec.describe "Customers Show" do
       expect(page).to have_current_path("/customers/#{@customer_1.id}")
       expect(page).to have_content(@item_2.name)
       expect(page).to have_content(@item_2.price)
+
+      save_and_open_page
     end
   end
 end
