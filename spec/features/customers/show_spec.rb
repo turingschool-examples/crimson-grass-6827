@@ -36,7 +36,7 @@ RSpec.describe "customers#show" do
 
       expect(page).to have_content(@item_1.name)
       expect(page).to have_content(@item_1.price)
-      # expect(page).to have_content(@item_1.supermarket_id)
+      expect(page).to have_content(@item_1.supermarket.name)
     end
   end
 
