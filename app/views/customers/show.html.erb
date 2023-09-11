@@ -2,12 +2,14 @@
 
 <h2>Items:</h2>
 
-<%= form_with url: "/customer_items", method: :post, data: { turbo: false } do |form| %>
+<%= form_with url: "/customer_items?customer_id=#{@customer.id}", method: :post, data: { turbo: false } do |form| %>
   <%= form.label :item_id, "Add item by item ID:" %>
   <%= form.number_field :item_id %>
   <%= form.submit "Submit" %>
 <% end %>
 
-<% @customer.items.each do |item| %>
-  <p>Name: <%= item.name %> | Price: $<%= item.price %> | Supermarket: <%= item.supermarket.name %></p>
-<% end %>
+<section id="items">
+  <% @customer.items.each do |item| %>
+    <p>Name: <%= item.name %> | Price: $<%= item.price %> | Supermarket: <%= item.supermarket.name %></p>
+  <% end %>
+</section>
