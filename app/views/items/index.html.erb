@@ -1,0 +1,6 @@
+<h1>Items Index</h1>
+
+<% @items.each do |item| %>
+  <h3><%= item.name %></h3>
+  <p>Price: $<%= item.price %> | Supermarket: <%= item.supermarket.name %> | Count of customers that have bought this item: <%= item.customer_count %></p>
+<% end %>
