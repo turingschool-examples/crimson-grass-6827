@@ -1,0 +1,15 @@
+<h1>Name: <%= @customer.name %></h1>
+
+<h3>Items: </h3>
+<% @customer.items.each do |item| %>
+  <p>Item name: <%= item.name %></p>
+  <p>Item price: <%= item.price %></p>
+  <p>Supermarket: <%= item.supermarket_id %></p>
+<% end %>
+
+<h3>Add an item to this list</h3>
+  <%= form_with url: "/customers/#{@customer.id}", method: :get, data: { turbo: false } do |form| %>
+  <%= form.label :search, "Search by item ID:" %>
+  <%= form.text_field :search %>
+  <%= form.submit "Submit" %>
+<% end %>
