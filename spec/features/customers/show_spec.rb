@@ -21,8 +21,8 @@ RSpec.describe "Customer Show",type: :feature do
           price: 2
         )
 
-        CustomerItems.create!(customer: customer_1, item: banana)
-        CustomerItems.create!(customer: customer_1, item: apple)
+        CustomerItem.create!(customer: customer_1, item: banana)
+        CustomerItem.create!(customer: customer_1, item: apple)
 
         visit "/customers/#{customer_1.id}"
 
