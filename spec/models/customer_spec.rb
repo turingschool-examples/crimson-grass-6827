@@ -6,4 +6,8 @@ RSpec.describe Customer, type: :model do
     it { should have_many(:items).through(:customer_items) }
   end
 
+  describe "validations" do
+    it { should validate_presence_of(:name) }
+  end
+
 end
