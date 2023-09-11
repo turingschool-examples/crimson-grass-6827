@@ -2,7 +2,17 @@
 
 
 <ul id="item_list">
-  <% @customer_items.each do |item| %> 
-    <li><%= "#{item.name}, $#{item.price}, #{item.supermarket_id}" %></li>
+  <% @customer_items.each do |item| %>
+    <li><%= "#{item.name}, $#{item.price}, Supermarket: #{item.supermarket.name}" %></li>
   <% end %> 
 </ul>
+
+
+<div id='add_item'>
+  <%= form_with url: "/customers/#{@customer.id}", method: :get, data: { turbo: false } do |form| %>
+    <%= form.label :name, "Search an Item" %>
+    <%= form.text_field :search %>
+    <%= form.submit "Search" %>
+  <% end %>
+
+</div>
