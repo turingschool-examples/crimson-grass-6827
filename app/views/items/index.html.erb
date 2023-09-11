@@ -1,0 +1,6 @@
+<h1>All Items</h1>
+<p>
+<% @items.each do |item| %>
+  <%= item.name %>, Price: $<%= item.price %>, Supermarket: <%= item.supermarket.name %>, Customer Count: <%= item.customer_count %><br><br>
+<% end %>
+</p>
