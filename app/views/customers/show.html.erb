@@ -8,3 +8,11 @@
     <li>SuperMarket: <%= item.supermarket.name %>
   </ul>
 <% end  %>
+
+<h2>Add item to customer</h2>
+
+<%= form_with url: "/customers/#{@customer.id}/items", method: :post, data: {turbo: false} do |f| %>
+  <%= f.label :item_id, "Item ID" %>
+  <%= f.number_field :item_id %>
+  <%= f.submit "Add item" %>
+<% end %>
