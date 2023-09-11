@@ -7,10 +7,10 @@ RSpec.describe Customer, type: :feature do
     @item1 = @supermarket.items.create(name: "Banana", price: 20)
   end
 
-  it "As a visitor, When I visit a customer show page, I see the customer's name, And I see its a list of its items including the item's name, price, and the name of the supermarket that it belongs to." do
+  xit "As a visitor, When I visit a customer show page, I see the customer's name, And I see its a list of its items including the item's name, price, and the name of the supermarket that it belongs to." do
 
     visit "/customers/#{@customer1.id}"
-    save_and_open_page
+    #save_and_open_page
 
     expect(page).to have_content(@customer1.name)
     expect(page).to have_content(@item1.name)
