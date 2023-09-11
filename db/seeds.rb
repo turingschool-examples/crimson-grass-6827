@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 michael_phelps = Customer.create!(name: "Michael Phelps")
+serena_williams = Customer.create!(name: "Serena Williams")
 
 sprouts = Supermarket.create!(name: "Sprouts", location: "123 Food St.")
 
@@ -18,3 +19,6 @@ peaches = sprouts.items.create!(name: "Peaches", price: 4)
 CustomerItem.create!(customer_id: michael_phelps.id, item_id: bananas.id)
 CustomerItem.create!(customer_id: michael_phelps.id, item_id: apples.id)
 CustomerItem.create!(customer_id: michael_phelps.id, item_id: oranges.id)
+CustomerItem.create!(customer_id: serena_williams.id, item_id: apples.id)
+CustomerItem.create!(customer_id: serena_williams.id, item_id: oranges.id)
+CustomerItem.create!(customer_id: serena_williams.id, item_id: peaches.id)
