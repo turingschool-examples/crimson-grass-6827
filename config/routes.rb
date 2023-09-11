@@ -9,4 +9,7 @@ Rails.application.routes.draw do
 
   # User Story 2
   post "/customers/:customer_id/items", to: "customer_items#create"
+
+  # User Story 3
+  get "/items", to: "items#index"
 end
