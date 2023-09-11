@@ -48,6 +48,7 @@ RSpec.describe "items#index" do
       expect(page).to have_content("Supermarket: #{@item_3.supermarket.name}")
       expect(page).to have_content("Customers Count: 2")
       
+      # testing to see that items can be bought by no customers and still appear
       expect(page).to have_content(@item_4.name)
       expect(page).to have_content("Price: #{@item_4.price}")
       expect(page).to have_content(@item_4.supermarket.name)
