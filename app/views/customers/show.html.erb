@@ -2,6 +2,7 @@
 <div class="grocery-list">
   <% @customer.items.each do |item| %>
     <p>Item: <%= item.name %></p>
-    <p>Cost: <%= item.price %></p></br>
+    <p>Cost: <%= item.price %></p>
+    <p>Store: <%= item.supermarket.name %></p></br>
   <% end %>
 </div>

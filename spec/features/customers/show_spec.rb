@@ -26,13 +26,13 @@ RSpec.describe "the custmer show page" do
     within("div.grocery-list") do
       expect(page).to have_content(item1.name)
       expect(page).to have_content(item1.price)
-      # expect(page).to have_content(item1.market)
+      expect(page).to have_content(item1.supermarket.name)
       expect(page).to have_content(item2.name)
       expect(page).to have_content(item2.price)
-      # expect(page).to have_content(item2.market)
+      expect(page).to have_content(item2.supermarket.name)
       expect(page).to have_content(item3.name)
       expect(page).to have_content(item3.price)
-      # expect(page).to have_content(item3.market)
+      expect(page).to have_content(item3.supermarket.name)
     end
   end
 end
