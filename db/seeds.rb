@@ -11,9 +11,10 @@ Item.destroy_all
 Supermarket.destroy_all
 
 customer_1 = Customer.create(name: "Josephine")
+customer_2 = Customer.create(name: "George")
+customer_3 = Customer.create(name: "Janie")
 
 supermarket_1 = Supermarket.create(name: "Albertson's", location: "1421 W Mockingbird LN")
-
 item_1 = Item.create(name: "salt", price: 2, supermarket_id: "#{supermarket_1.id}")
 item_2 = Item.create(name: "pasta", price: 3, supermarket_id: "#{supermarket_1.id}")
 item_3 = Item.create(name: "pasta sauce", price: 4, supermarket_id: "#{supermarket_1.id}")
@@ -22,8 +23,9 @@ customer_item_1 = CustomerItem.create(customer: customer_1, item: item_1)
 customer_item_2 = CustomerItem.create(customer: customer_1, item: item_2)
 customer_item_3 = CustomerItem.create(customer: customer_1, item: item_3)
 
-item_4 = Item.create(name: "spinach", price: 1, supermarket_id: "#{supermarket_1.id}")
-item_5 = Item.create(name: "bread", price: 3, supermarket_id: "#{supermarket_1.id}")
-item_6 = Item.create(name: "apricots", price: 4, supermarket_id: "#{supermarket_1.id}")
+customer_item_4 = CustomerItem.create(customer: customer_2, item: item_1)
+customer_item_5 = CustomerItem.create(customer: customer_2, item: item_2)
+customer_item_6 = CustomerItem.create(customer: customer_2, item: item_3)
 
+customer_item_7 = CustomerItem.create(customer: customer_3, item: item_3)
 

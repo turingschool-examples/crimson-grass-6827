@@ -5,4 +5,8 @@ class Item < ApplicationRecord
 
   validates :name, presence: true
   validates :price, presence: true
+
+  def count_of_customers
+    self.customers.distinct.size
+  end
 end
