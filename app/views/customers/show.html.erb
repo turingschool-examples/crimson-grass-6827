@@ -1,0 +1,14 @@
+<%= @customer.name %>
+
+<% @customer.items.each do |item| %>
+  <h3><%= item.name %></h3>
+  <%= item.price %>
+  <%= item.get_supermarket_name %>
+<% end %>
+
+<%= form_with url: "/customers/#{@customer.id}", method: :patch, data: { turbo: false } do |f| %>
+  <%= f.label :id %>
+  <%= f.text_field :id %>
+
+  <%= f.submit "Add Item" %>
+<% end %>

@@ -1,0 +1,6 @@
+<% @items.each do |item| %>
+  <h3><%= item.name %></h3>
+  <%= item.price %>
+  <%= item.get_supermarket_name %>
+  <%= item.get_customer_count %>
+<% end %>
