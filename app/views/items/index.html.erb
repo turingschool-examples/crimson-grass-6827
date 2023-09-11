@@ -3,5 +3,6 @@
 <% @items.each do |item| %>
   <p> Name: <%= item.name %> </p>
   <p> Price: <%= item.price %> </p>
-  <p> From: <%= item.supermarket %> </p>
+  <p> From: <%= item.supermarket.name %> </p>
+  <p> Count: <%= item.customer_count %> </p>
 <%end%>

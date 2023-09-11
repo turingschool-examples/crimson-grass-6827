@@ -26,5 +26,12 @@ RSpec.describe "Items Show" do
       expect(page).to have_content("Price: #{@item_1.price}")
       expect(page).to have_content("From: #{@item_1.supermarket.name}")
     end
+
+    # User Story 3
+    it "displays the count of customers that bought the item" do
+      visit "/items"
+
+      expect(page).to have_content("Count: #{@item_1.customer_count}")
+    end
   end
 end
