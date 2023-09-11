@@ -1,0 +1,8 @@
+<% @items.each do |item| %>
+  <section id="item-<%= item.id %>">
+    <h3><%= item.name %></h3>
+    <p>Price: $<%= item.price %></p><br>
+    <p>Name of Supermarket: <%= item.supermarket_name %></p><br>
+    <p>Number of Customers who bought item: <%= item.customer_count %></p><br>
+  </section>
+<% end %>

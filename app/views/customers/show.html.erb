@@ -1,0 +1,15 @@
+<h2><%= @customer.name %></h2>
+<br>
+<% @items.each do |item| %>
+  <section id="item-<%= item.id %>">
+    <p><%= item.name %>, $<%= item.price %>, <%= item.supermarket_name %></p>
+  </section>
+<% end %>
+<br>
+<h4>Add item</h4>
+<br>
+<%= form_with url:"/customers/#{@customer.id}", method: :post, data: {turbo: false} do |form| %>
+  <%= form.label :new_item, "New Item ID:" %><br>
+  <%= form.text_field :new_item %><br>
+  <%= form.submit "Submit" %>
+<% end %>
