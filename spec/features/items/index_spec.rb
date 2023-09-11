@@ -39,6 +39,8 @@ RSpec.describe "the items index page" do
 
     visit "/items"
 
-    
+    save_and_open_page
+    expect(page).to have_content("Customer Count: 2")
+    expect(page).to have_content("Customer Count: 1")
   end
 end
