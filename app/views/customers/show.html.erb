@@ -9,3 +9,11 @@
     <li>Price: <%= item.price %> </li>
     <li>Supermarket: <%= item.supermarket.name %>
   <% end %>
+</ul>
+
+<h2> Add Item </h2>
+<%= form_with model: [@customer, @customer.customer_items.build], url: customer_add_item_path(@customer), method: :post do |form| %>
+  <%= form.label :item_id, "Item ID" %>
+<%= form.text_field :item_id, name: 'customer_item[item_id]', placeholder: "Enter Item ID" %>
+  <%= form.submit "Add Item" %>
+<% end %>
