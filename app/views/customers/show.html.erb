@@ -11,3 +11,12 @@
   <% end %>
 </section>
 
+<section class="add_item">
+<h3>Add Item: </h3>
+<%= form_with url: "/customers/#{@customer.id}", method: :post, local: true do |f| %>
+  <%= f.label :new_item_id %>
+  <%= f.text_field :new_item_id %>
+  <%= f.submit %>
+<% end %>
+</section
+

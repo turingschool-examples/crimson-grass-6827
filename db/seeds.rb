@@ -22,4 +22,8 @@ customer_item_1 = CustomerItem.create(customer: customer_1, item: item_1)
 customer_item_2 = CustomerItem.create(customer: customer_1, item: item_2)
 customer_item_3 = CustomerItem.create(customer: customer_1, item: item_3)
 
+item_4 = Item.create(name: "spinach", price: 1, supermarket_id: "#{supermarket_1.id}")
+item_5 = Item.create(name: "bread", price: 3, supermarket_id: "#{supermarket_1.id}")
+item_6 = Item.create(name: "apricots", price: 4, supermarket_id: "#{supermarket_1.id}")
+
 
