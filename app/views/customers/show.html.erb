@@ -7,3 +7,9 @@
   <li>Supermarket: <%= item.supermarket.name %></li>
   <hr>
   <% end %>
+
+<%= form_with url: "/customers/#{@customer.id}/items", method: :post, data: { turbo: false } do |form| %>
+  <%= form.label "Item ID" %>
+  <%= form.text_field :item_id %>
+  <%= form.submit "Add Item" %>
+<% end %>

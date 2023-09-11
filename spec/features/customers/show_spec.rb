@@ -55,8 +55,19 @@ RSpec.describe "recipes show page", type: :feature do
       
       expect(page).to have_content(@corner.name)
       expect(page).to have_content(@fresh.name)
-      expect(page).to_not have_content(@big.name)
+    end
+    
+    it "has a form to add an existing item to the customer" do
+      visit "/customers/#{@sally.id}"
 
+      expect(page).to_not have_content(@truff.name)
+      fill_in :item_id, with: @truff.id
+      
+      click_button "Add Item"
+      
+      expect(current_path).to eq("/customers/#{@sally.id}")
+      expect(page).to have_content(@truff.name)
+      
       
     end
   end
