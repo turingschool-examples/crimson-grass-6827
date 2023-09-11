@@ -1,1 +1,7 @@
 <h1><%= @customer.name %>'s Shopping List</h1>
+<div class="grocery-list">
+  <% @customer.items.each do |item| %>
+    <p>Item: <%= item.name %></p>
+    <p>Cost: <%= item.price %></p></br>
+  <% end %>
+</div>
