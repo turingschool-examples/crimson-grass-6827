@@ -4,4 +4,8 @@ class Item < ApplicationRecord
   has_many :customers, through: :customer_items
   validates :name, presence: true
   validates :price, presence: true
+
+  def number_of_customers
+    self.customers.count
+  end
 end

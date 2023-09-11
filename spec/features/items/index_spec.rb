@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Item, type: :model do
+RSpec.describe 'Items Index Page' do
   before :each do
     @market1 = Supermarket.create!(name: "Smith's", location: "2100 South")
     @market2 = Supermarket.create!(name: "Harmon's", location: "4700 South")
@@ -17,22 +17,16 @@ RSpec.describe Item, type: :model do
     @customer_item_2 = CustomerItem.create!(item_id: @item2.id, customer_id: @customer1.id)
     @customer_item_3 = CustomerItem.create!(item_id: @item3.id, customer_id: @customer2.id)
     @customer_item_4 = CustomerItem.create!(item_id: @item4.id, customer_id: @customer2.id)
-    @customer_item_4 = CustomerItem.create!(item_id: @item4.id, customer_id: @customer1.id)
   end
 
-  describe 'relationships' do
-    it { should belong_to :supermarket }
-  end
+  describe "#index" do
+    it "displays all items - name, price, supermarket and number of customers" do 
+      visit "/items"
 
-  describe 'validations' do
-    it { should validate_presence_of :name }
-    it { should validate_presence_of :price }
-  end
-
-  describe "instance methods" do
-    it "#number_of_customers" do
-      expect(@item1.number_of_customers).to eq(1)
-      expect(@item4.number_of_customers).to eq(2)
+      expect(page).to have_content(@item1.name)
+      expect(page).to have_content(@item1.price)
+      expect(page).to have_content(@market1.name)
+      expect(page).to have_content(@item1.customers.count)
     end
   end
 end
