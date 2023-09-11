@@ -19,6 +19,26 @@ RSpec.feature "the customer show page" do
       expect(page).to have_content(fries.price)
       expect(page).to have_content(costco.name)
     end
+
+    it 'US2 displays a form to add in item to the customer' do
+      will = Customer.create!(name: "Will")
+      costco = Supermarket.create(name: "Costco", location: "Arvada")
+      steak = costco.items.create(name: "Steak", price: 10)
+
+      visit "/customers/#{will.id}"
+
+      expect(page).to have_content("Add Item:")
+      expect(page).to have_field("item_id")
+      expect(page).to have_button("Add Item")
+
+      fill_in "item_id", with: "#{steak.id}"
+      click_button "Add Item"
+
+      expect(current_path).to eq("/customers/#{will.id}")
+      expect(page).to have_content(steak.name)
+      expect(page).to have_content(steak.price)
+    end
+
   end
 end
 
