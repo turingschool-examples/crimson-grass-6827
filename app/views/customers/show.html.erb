@@ -1,0 +1,8 @@
+<h1 id='customer_name'>Customer Name: <%= @customer.name %></h1>
+
+
+<ul id="item_list">
+  <% @customer_items.each do |item| %> 
+    <li><%= "#{item.name}, $#{item.price}, #{item.supermarket_id}" %></li>
+  <% end %> 
+</ul>
