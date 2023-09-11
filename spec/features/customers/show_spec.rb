@@ -26,7 +26,27 @@ RSpec.describe "Customers Show" do
       expect(page).to have_content(@item_3.name)
       expect(page).to have_content("$#{@item_3.price}")
       expect(page).to have_content("found at: #{@supermarket_1.name}")
-      save_and_open_page
+    end
+
+    it "I see a form to add a new item to the customers" do
+      visit "/customers/#{@customer_1.id}"
+      
+      expect(page).to have_field("item_id")
+      expect(page).to have_button("Add Item")
+    end
+
+    it "Filling the form with an existing item id and submitting it redirects me to the same page and shows the added item" do
+      visit "/customers/#{@customer_1.id}"
+
+      expect(page).to_not have_content(@item_2.name)
+      expect(page).to_not have_content(@item_2.price)
+      
+      fill_in("item_id", with: "#{@item_2.id}")
+      click_button("Add Item")
+
+      expect(page).to have_current_path("/customers/#{@customer_1.id}")
+      expect(page).to have_content(@item_2.name)
+      expect(page).to have_content(@item_2.price)
     end
   end
 end
