@@ -15,6 +15,8 @@ Supermarket.destroy_all
 
 #customer
 @customer_1 = Customer.create!(name: "Fred")
+@customer_2 = Customer.create!(name: "Creedence")
+@customer_3 = Customer.create!(name: "Jane")
 
 #item
 @item_1 = @supermarket_1.items.create!(name: "Eggs", price: 6)
@@ -23,6 +25,8 @@ Supermarket.destroy_all
 @item_4 = @supermarket_1.items.create!(name: "Walnuts", price: 5)
 
 #customer item
-@eggs = CustomerItem.create!(customer: @customer_1, item: @item_1)
+@eggs_1 = CustomerItem.create!(customer: @customer_1, item: @item_1)
+@eggs_2 = CustomerItem.create!(customer: @customer_2, item: @item_1)
 @banana = CustomerItem.create!(customer: @customer_1, item: @item_2)
-@milk = CustomerItem.create!(customer: @customer_1, item: @item_3)
+@milk_1 = CustomerItem.create!(customer: @customer_1, item: @item_3)
+@milk_2 = CustomerItem.create!(customer: @customer_3, item: @item_3)
