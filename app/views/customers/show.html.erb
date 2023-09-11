@@ -1,0 +1,13 @@
+<h2>Customer Name: <%= @customer.name %></h2>
+<% @customer.items.each do |item| %>
+<p> Item Name: <%= item.name %> </p>
+<p> Item Price: <%= item.price %> </p>
+<p> Items Store: <%= item.supermarket.name %> </p>
+<% end %> 
+
+<%= form_with(url: "/customers/#{@customer.id}", local: true, method: :patch, id: 'add-item-form') do |f| %>
+  <h3>Add a Item to <%= @customer.name %></h3></h3>
+      <%= f.label :item_id %>
+      <%= f.text_field :item_id %>
+      <%= f.submit "Submit" %>
+    <% end %>
