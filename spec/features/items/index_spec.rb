@@ -1,14 +1,8 @@
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe Item, type: :model do
-  describe 'relationships' do
-    it { should belong_to :supermarket }
-    it { should have_many (:customer_items) }
-    it { should have_many(:customers).through(:customer_items)  }
-  end
-
-  describe "count_customets" do
-    it "can count the number of customers an item has" do
+RSpec.describe "item index", type: :feature do
+  describe "as a visitor" do
+    it "All items names, cost, supermarket and how may were purchased" do
       abel = Customer.create!(name: "Abel")
       blake = Customer.create!(name: "Blake")
       cici = Customer.create!(name: "Cici")
@@ -29,8 +23,15 @@ RSpec.describe Item, type: :model do
      CustomerItem.create!(customer: cici, item: corn)
      CustomerItem.create!(customer: blake, item: donut)
 
-     expect(corn.count_customers).to eq(3)
-     expect(eggs.count_customers).to eq(0)
+      visit "items/"
+      
+      expect(page).to have_content("apple")
+      expect(page).to have_content("$16")
+      expect(page).to have_content("Albertsons")
+      expect(page).to have_content("Bingos")
+      expect(page).to have_content("All Items")
+      expect(find("#item-#{corn.id}")).to have_content(3)
+      expect(find("#item-#{apple.id}")).to have_content(1)
     end
   end
 end

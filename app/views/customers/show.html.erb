@@ -1,0 +1,18 @@
+<h1> <%= @customer.name %></h1>
+
+<% @customer.items.each do |item| %>
+<%= item.name %>  | 
+$<%= item.price %>  | 
+From <%= item.supermarket.name %> </br>
+<% end %>
+
+</br></br>
+
+<%= form_with url: "/customer_items/", method: :post, data: { turbo: false } do |form| %>
+
+<%= form.label :item_id, "Item ID" %></br>
+<%= form.number_field :item_id %></br>
+<%= form.hidden_field :customer_id, :value=> @customer.id %>
+
+<%= form.submit "Add" %>
+<% end %>
