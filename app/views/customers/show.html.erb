@@ -1,0 +1,19 @@
+<h1><%= @customer.name %></h1>
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Price</th>
+      <th>Supermarket</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @customer.items.each do |item| %>
+      <tr>
+        <td><%= item.name %></td>
+        <td><%= item.price %></td>
+        <td><%= item.supermarket.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
