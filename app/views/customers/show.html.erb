@@ -1,0 +1,9 @@
+<h2>Customer Data for: <%= @customer.name %></h2>
+
+<h3><strong>Purchased Items</strong></h3>
+<% @customer.items.each do |item| %>
+  <li>Name: <%= item.name %></li>
+  <li>Price: <%= item.price %></li>
+  <li>Supermarket: <%= item.supermarket.name %></li>
+  <hr>
+  <% end %>
